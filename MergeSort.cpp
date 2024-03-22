@@ -1,7 +1,8 @@
 #include <iostream>
 #include <vector>
+using namespace std;
 
 int main() {
-	std::cout << "Hello This Is Joshua";
+	cout << "Hello This Is Joshua";
 	return 0;
 }
