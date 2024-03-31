@@ -14,7 +14,7 @@ vector<int> MergeSort(vector<int> arr) {
 	vector<int> left_h(arr.begin(), arr.end() - half);
 	vector<int> right_h(arr.end() - half, arr.end());
 
-	// Split the vectors in half recursively
+	// Split the vectors in half recursively.
 	vector<int> left = MergeSort(left_h);
 	vector<int> right = MergeSort(right_h);	
 
@@ -28,7 +28,7 @@ vector<int> MergeSort(vector<int> arr) {
 			result.push_back(right[j++]);
 		}
 	}
-
+	// Fill the rest of the vector with the remaining elements.
 	while (i < left.size()) {
 		result.push_back(left[i++]);
 	}
@@ -39,24 +39,24 @@ vector<int> MergeSort(vector<int> arr) {
 }
 
 int main() {
-	//Normal Case: 5 Ints from 1-5
+	// Normal Case: 5 Ints from 1-5.
 	vector<int> normal = {4,3,1,2,5};
 	vector<int> normalAns = {1,2,3,4,5};
 	assert(MergeSort(normal) == normalAns);
-	//Duplicate Case: 5 Ints of the Same Number
+	// Duplicate Case: 5 Ints of the Same Number.
 	vector<int> dupe = {2,2,2,2,2};
 	vector<int> dupeAns = {2,2,2,2,2};
 	assert(MergeSort(dupe) == dupeAns);
-	//Negative Case: 5 Ints with Negative and Positive
+	// Negative Case: 5 Ints with Negative and Positive
 	vector<int> neg = {6, 3, -2, -10, 15};
 	vector<int> negAns = {-10, -2, 3, 6, 15};
 	assert(MergeSort(neg) == negAns);
-	//Single Case: 1 Int
+	// Single Case: 1 Int.
 	vector<int> one = {5};
 	vector<int> oneAns = {5};
 	assert(MergeSort(one) == oneAns);
 	vector<int> ref = {};
-	//populate vector with random numbers
+	// Populate vector with random numbers.
 	for (int i = 0; i < 10000; i++) {
 		int num = rand() % 50000;
 		ref.push_back(num);
@@ -64,13 +64,13 @@ int main() {
 	vector<int> stressAns = ref;
 	sort(stressAns.begin(),stressAns.end());
 	assert(MergeSort(ref) == stressAns);
-	//Zero Case
+	// Zero Case
 	vector<int> zero = {};
 	vector<int> zeroAns = {};
 	assert(MergeSort(zero) == zeroAns);
 
 	vector<int> ref2 = {};
-	//populate vector with random numbers
+	// Populate vector with random numbers.
 	for (int i = 0; i < 1000000; i++) {
 		int num2 = rand() % 50000000;
 		ref2.push_back(num2);
