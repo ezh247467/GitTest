@@ -64,6 +64,19 @@ int main() {
 	vector<int> stressAns = ref;
 	sort(stressAns.begin(),stressAns.end());
 	assert(MergeSort(ref) == stressAns);
+	//Zero Case
+	vector<int> zero = {};
+	vector<int> zeroAns = {};
+	assert(MergeSort(zero) == zeroAns);
 
+	vector<int> ref2 = {};
+	//populate vector with random numbers
+	for (int i = 0; i < 1000000; i++) {
+		int num2 = rand() % 50000000;
+		ref2.push_back(num2);
+	}
+	vector<int> stressAns2 = ref2;
+	sort(stressAns2.begin(),stressAns2.end());
+	assert(MergeSort(ref2) == stressAns2);
 	return 0;
 }
