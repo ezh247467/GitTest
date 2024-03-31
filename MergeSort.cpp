@@ -42,5 +42,6 @@ int main() {
 	for (auto i : tester) {
 		cout << i << endl;
 	}
+	cout << "This is Joshua we are testing Stash" << endl;
 	return 0;
 }
