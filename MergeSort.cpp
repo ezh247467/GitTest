@@ -35,12 +35,11 @@ int main() {
 	vector<int> one = {5};
 	vector<int> oneAns = {5};
 	assert(MergeSort(one) == oneAns);*/
-	cout << "Hello This Is Joshua" << endl;
-	cout << "This is Joshua I'm Conflicting" << endl;
 	vector<int> test = {1, 2, 3};
 	vector<int> tester(test.begin(), test.end() - (test.size() / 2));
 	for (auto i : tester) {
 		cout << i << endl;
 	}
+	cout << "Testing that my changes are not saved" << endl;
 	return 0;
 }
