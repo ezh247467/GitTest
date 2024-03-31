@@ -16,7 +16,7 @@ vector<int> MergeSort(vector<int> arr) {
 
 int main() {
 	//Normal Case: 5 Ints from 1-5
-	/*vector<int> normal = {4,3,1,2,5};
+	vector<int> normal = {4,3,1,2,5};
 	vector<int> normalAns = {1,2,3,4,5};
 	assert(MergeSort(normal) == normalAns);
 	//Duplicate Case: 5 Ints of the Same Number
@@ -31,10 +31,16 @@ int main() {
 	vector<int> one = {5};
 	vector<int> oneAns = {5};
 	assert(MergeSort(one) == oneAns);
-	//Single Case: 1 Int
-	vector<int> one = {5};
-	vector<int> oneAns = {5};
-	assert(MergeSort(one) == oneAns);*/
+	vector<int> ref = {};
+	//populate vector with random numbers
+	for (int i = 0; i < 10000; i++) {
+		int num = rand() % 50000;
+		ref.push_back(num);
+	}
+	vector<int> stressAns = ref;
+	sort(stressAns.begin(),stressAns.end());
+	assert(MergeSort(ref) == stressAns);
+
 	vector<int> test = {1, 2, 3};
 	vector<int> tester(test.begin(), test.end() - (test.size() / 2));
 	for (auto i : tester) {
