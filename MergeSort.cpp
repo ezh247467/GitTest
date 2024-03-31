@@ -40,10 +40,6 @@ int main() {
 	for (auto i : tester) {
 		cout << i << endl;
 	}
-<<<<<<< HEAD
-	cout << "Testing that my changes are not saved" << endl;
-=======
 	cout << "This is Joshua we are testing Stash" << endl;
->>>>>>> 764449cb981078f65f43dc28433334ecd6f5a4e6
 	return 0;
 }
