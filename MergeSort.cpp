@@ -3,15 +3,33 @@
 #include <cassert>
 using namespace std;
 
-
+typedef unsigned int uint
 
 
 vector<int> MergeSort(vector<int> arr) {
-	if (arr.size <= 1) {
+	if (arr.size() <= 1) {
 		return arr;
 	}
-	vector<int> left(arr.begin(), arr.end() - (arr.size() / 2));
-	vector<int> left = MergeSort(
+	uint half = arr.size() / 2
+	vector<int> left(arr.begin(), arr.end() - half);
+	vector<int> right(arr.end() - half, arr.end());
+
+	// Split the vectors in half recursively
+	vector<int> left = MergeSort(left);
+	vector<int> right = MergeSort(right);	
+
+	int i = 0, j = 0;
+	vector<int> result;
+	// Populate vector in order.
+	while (i < left.size() && j < right.size()) {
+		if (left[i] < right[j]) {
+			result.push_back(left[i++]);
+		} else {
+			result.push_back(right[j++]);
+		}
+	}
+
+	
 }
 
 int main() {
@@ -36,7 +54,7 @@ int main() {
 	vector<int> oneAns = {5};
 	assert(MergeSort(one) == oneAns);*/
 	vector<int> test = {1, 2, 3};
-	vector<int> tester(test.begin(), test.end() - (test.size() / 2));
+	vector<int> tester(test.end() - (test.size() / 2), test.end());
 	for (auto i : tester) {
 		cout << i << endl;
 	}
