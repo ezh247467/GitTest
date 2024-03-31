@@ -55,10 +55,15 @@ int main() {
 	vector<int> one = {5};
 	vector<int> oneAns = {5};
 	assert(MergeSort(one) == oneAns);
-	/*vector<int> test = {1, 2, 3};
-	vector<int> tester(test.end() - (test.size() / 2), test.end());
-	for (auto i : tester) {
-		cout << i << endl;
-	}*/
+	vector<int> ref = {};
+	//populate vector with random numbers
+	for (int i = 0; i < 10000; i++) {
+		int num = rand() % 50000;
+		ref.push_back(num);
+	}
+	vector<int> stressAns = ref;
+	sort(stressAns.begin(),stressAns.end());
+	assert(MergeSort(ref) == stressAns);
+
 	return 0;
 }
